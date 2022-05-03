@@ -1,4 +1,5 @@
 ## Apache Tomcat Installation And Setup In AWS EC2 Redhat Instnace.
+## this is file can be used as template
 ##### Prerequisite
 + AWS Acccount.
 + Create Redhat EC2 T2.micro Instnace.
