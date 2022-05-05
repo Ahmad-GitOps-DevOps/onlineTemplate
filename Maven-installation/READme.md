@@ -40,7 +40,7 @@ source ~/.bashrc
 mvn -version
 ```
 ## .#Step5) Maven Life cycles & commands
-``Maven Life cycles
+``` sh
 There are 3 life cycles in maven.
 
 1.Default Lifecycle
@@ -60,4 +60,3 @@ There are 3 life cycles in maven.
 3,Site Lifecycle
   site generate the project's site documentation
 ```
-
