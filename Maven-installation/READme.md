@@ -39,7 +39,13 @@ export PATH=$PATH:$M2_HOME/bin
 source ~/.bashrc
 mvn -version
 ```
-## .#Step5) Maven Life cycles & commands
+## .#Step5) Copy Maven Files
+``` sh
+
+sudo scp maven-web-app.war UserName@ServerIP:/opt/Maven
+
+
+## .#Step6) Maven Life cycles & commands
 ``` sh
 There are 3 life cycles in maven.
 
