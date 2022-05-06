@@ -43,7 +43,7 @@ mvn -version
 ``` sh
 
 sudo scp maven-web-app.war UserName@ServerIP:/opt/Maven
-
+```
 
 ## .#Step6) Maven Life cycles & commands
 ``` sh
