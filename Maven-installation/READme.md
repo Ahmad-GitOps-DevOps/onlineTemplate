@@ -43,6 +43,12 @@ mvn -version
 ``` sh
 
 sudo scp maven-web-app.war UserName@ServerIP:/opt/Maven
+Extract the files
+Ranme if needed
+Cd to the direcotry
+Make sure Pom.xml available 
+Start the build
+
 ```
 
 ## .#Step6) Maven Life cycles & commands
