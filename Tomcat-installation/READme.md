@@ -27,4 +27,26 @@ sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 ```
+###  Tomcat server configuration:
+``` sh
+ Nano /opt/tomcat9/webapps/manager/META-INF/context.xml
+  ```
+  
+###  Add users to mange Tomcat Server:
+``` sh
+Nano /opt/tomcat9/conf/tomcat-users.xml
+<user username="admin" password="admin" roles="manager-gui,admin-gui, manager-script"/>
 
+  ```
+###  Restart Tomcat Server:
+  ``` sh
+go to the server IP address and try to login
+  ```
+  
+  
+  
+  
+  
+  
+  
+  
