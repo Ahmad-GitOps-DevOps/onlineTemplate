@@ -90,4 +90,6 @@ There are 3 life cycles in maven.
   
 3,Site Lifecycle
   site generate the project's site documentation
+
 ```
+## Maven -Configuration directory > conf/settings.xml
