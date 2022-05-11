@@ -57,3 +57,4 @@ sudo systemctl start nexus
 sudo systemctl status nexus
 echo "end of nexus installation"
 ```
+## Nexus - Configuration Directory > /opt/nexus/etc/nexus-default.properties
