@@ -52,8 +52,12 @@ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 
 ## SonarQube default login:
 ```sh
-<<Comment  login(username) = admin
-                 password  = admin 
+<<Comment  
+
+SonarQube Configuratoin directory
+/opt/sonarqube/conf/sonar.properties
+login(username) = admin
+     password  = admin 
 To change it go to Administrator > Security > users > tokens > generate , and create new token
 Go to pom.xml and past the token
 
