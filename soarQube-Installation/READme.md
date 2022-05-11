@@ -69,7 +69,7 @@ Go to pom.xml and past the token
         </properties>
 Comment
 
-#If needed go to pom.htmal > properties and edit/change password,IP, or Port number
+#If needed go to pom.xml > properties and edit/change password,IP, or Port number
 <<Commnet
 
   <properties>
