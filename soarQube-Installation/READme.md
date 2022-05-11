@@ -44,3 +44,59 @@ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 ```
 
+## Go to Maven folder or the folder where we want to perform SonarQube test
+```sh
+
+
+```
+
+## SonarQube default login:
+```sh
+<<Comment  login(username) = admin
+                 password  = admin 
+To change it go to Administrator > Security > users > tokens > generate , and create new token
+Go to pom.xml and past the token
+
+        <properties>
+                <jdk.version>1.8</jdk.version>
+                <spring.version>5.1.2.RELEASE</spring.version>
+                <junit.version>4.11</junit.version>
+                <log4j.version>1.2.17</log4j.version>
+                <sonar.host.url>http:172.31.87.34:9000/</sonar.host.url>
+                <sonar.login>8584e56bfe7ef0b01c5c7fa8cb97c9b521b53fe6</sonar.login>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        </properties>
+Comment
+
+#If needed go to pom.htmal > properties and edit/change password,IP, or Port number
+<<Commnet
+
+  <properties>
+                <jdk.version>1.8</jdk.version>
+                <spring.version>5.1.2.RELEASE</spring.version>
+                <junit.version>4.11</junit.version>
+                <log4j.version>1.2.17</log4j.version>
+                <sonar.host.url>http:172.31.87.34:9000/</sonar.host.url>
+                <sonar.login>admin</sonar.login>
+                <sonar.password>admin</sonar.password>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        </properties>
+
+Commnet
+```
+
+
+## Access SonarQube
+```sh
+#Run mvn package
+#Run mvn sonar sonar
+#Go to the browser type SonarQube IP:PortNumber
+
+#To Setup roles go to Quality Gates
+#To Setup Profiles to to Quality Profile
+
+```
+
+
