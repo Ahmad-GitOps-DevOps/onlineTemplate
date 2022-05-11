@@ -51,7 +51,7 @@ Start the build
 
 ```
 
-## .#Step6) Copy Maven Files
+## .#Step6) Change Maven Default Repository 
 ``` sh
 
 Maven Default Rrepository ~/`m2/repository
