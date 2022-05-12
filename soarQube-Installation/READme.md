@@ -55,7 +55,7 @@ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 <<Comment  
 
 SonarQube Configuratoin directory
-/opt/sonarqube/conf/sonar.properties
+/opt/sonarqube/conf/sonar.properties if we want to change anything in Sonr configuration 
 login(username) = admin
      password  = admin 
 To change it go to Administrator > Security > users > tokens > generate , and create new token
