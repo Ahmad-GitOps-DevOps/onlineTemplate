@@ -44,7 +44,7 @@ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 ```
 
-## integrate SonarQube to Manven
+## Integrate SonarQube to Manven
 ```sh
 <<Comment to integrate SonarQube to Manven we need to be authticate by going MavenServer > project folder > pom.xml > properties > change the app address/portNumber and add login details for sonarQube server
 Comment
