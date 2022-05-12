@@ -44,53 +44,24 @@ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 ```
 
-## Go to Maven folder or the folder where we want to perform SonarQube test
+## integrate SonarQube to Manven
 ```sh
-
-
+<<Comment to integrate SonarQube to Manven we need to be authticate by going MavenServer > project folder > pom.xml > properties > change the app address/portNumber and add login details for sonarQube server
+Comment
 ```
 
 ## SonarQube default login:
 ```sh
 <<Comment  
-
-SonarQube Configuratoin directory
-/opt/sonarqube/conf/sonar.properties if we want to change anything in Sonr configuration 
 login(username) = admin
-     password  = admin 
-To change it go to Administrator > Security > users > tokens > generate , and create new token
-Go to pom.xml and past the token
+      password  = admin
 
-        <properties>
-                <jdk.version>1.8</jdk.version>
-                <spring.version>5.1.2.RELEASE</spring.version>
-                <junit.version>4.11</junit.version>
-                <log4j.version>1.2.17</log4j.version>
-                <sonar.host.url>http:172.31.87.34:9000/</sonar.host.url>
-                <sonar.login>8584e56bfe7ef0b01c5c7fa8cb97c9b521b53fe6</sonar.login>
-                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        </properties>
+To change the password to token go to Administrator > Security > users > tokens > generate , and create new token
+Go to pom.xml and past the token
 Comment
 
-#If needed go to pom.xml > properties and edit/change password,IP, or Port number
-<<Commnet
-
-  <properties>
-                <jdk.version>1.8</jdk.version>
-                <spring.version>5.1.2.RELEASE</spring.version>
-                <junit.version>4.11</junit.version>
-                <log4j.version>1.2.17</log4j.version>
-                <sonar.host.url>http:172.31.87.34:9000/</sonar.host.url>
-                <sonar.login>admin</sonar.login>
-                <sonar.password>admin</sonar.password>
-                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        </properties>
-
-Commnet
 ```
-
+## SonarQube Configuratoin directory > /opt/sonarqube/conf/sonar.properties
 
 ## Access SonarQube
 ```sh
