@@ -16,32 +16,51 @@ sudo useradd sonar
 # Grand sudo access to sonar user
 sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 sudo su - sonar
+sudo hostname sonar
+
 ```
 
 ### Install Java JDK 1.8+
 
 ``` sh
-hostname sonar
 cd /opt
-sudo yum -y install unzip wget git
-sudo wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
-sudo yum install jdk-8u131-linux-x64.rpm -y
+sudo yum install wget git nano unzip -y
+sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 ```
 ### Download and extract the SonarqQube Server software.
 ```sh
-sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
-sudo unzip sonarqube-7.8.zip
-sudo rm -rf sonarqube-7.8.zip
-sudo mv sonarqube-7.8 sonarqube
+sudo wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz 
+sudo tar -zxvf nexus-3.15.2-01-unix.tar.gz
+sudo mv /opt/nexus-3.15.2-01 /opt/nexus
+sudo rm -rf nexus-3.15.2-01-unix.tar.gz
 ```
 
 ## Grant permissions for sonar user to start and manage sonarQube
 ```sh
-sudo chown -R sonar:sonar /opt/sonarqube/
-sudo chmod -R 775 /opt/sonarqube/
-# start sonarQube server
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+
+# Change the owner and group permissions to /opt/nexus and /opt/sonatype-work directories.
+sudo chown -R nexus:nexus /opt/nexus
+sudo chown -R nexus:nexus /opt/sonatype-work
+sudo chmod -R 775 /opt/nexus
+sudo chmod -R 775 /opt/sonatype-work
+
+```
+## change from #run_as_user="" to [ run_as_user="nexus" ]
+```sh
+nano /opt/nexus/bin/nexus.rc
+sudo echo run_as_user="nexus" > nexus.rc
+
+```
+## CONFIGURE NEXUS TO RUN AS A SERVICE
+```sh
+sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+
+#9 Enable and start the nexus services
+sudo systemctl enable nexus
+sudo systemctl start nexus
+sudo systemctl status nexus
+echo "end of nexus installation"
+
 ```
 
 ## Integrate SonarQube to Manven
