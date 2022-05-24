@@ -30,6 +30,12 @@ starttomcat
 ###  Tomcat server configuration:
 ``` sh
  Nano /opt/tomcat9/webapps/manager/META-INF/context.xml
+ comment the Valve:
+ <!--
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+    -->
+
   ```
   
 ###  Add users to mange Tomcat Server:
