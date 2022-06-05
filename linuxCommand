@@ -1,0 +1,362 @@
+pwd - disply current directory
+
+-----------------------------
+cd - change working directory 
+-----------------------------
+cd
+You can change your current directory with the cd command (Change Directory).
+
+cd ~
+The cd is also a shortcut to get back into your home directory. Just typing cd without a target
+directory, will put you in your home directory. Typing cd ~ has the same effect.
+
+cd ..
+To go to the parent directory (the one just above your current directory in the directory
+tree), type cd .. .
+
+
+-------------------------------------
+ls - disply list of files or directory 
+-------------------------------------
+
+ls
+You can list the contents of a directory with ls.
+
+ls -a
+A frequently used option with ls is -a to show all files
+
+ls -l -11
+Typing just ls gives you a list of files in the directory
+
+ls -lh
+t shows the numbers (file sizes) in a more human readable format
+
+--------------
+mkdir
+--------------
+to create your own directories with mkdir. You have to give at least one parameter to mkdir, the name of the new directory to be created.
+
+mkdir -p
+When given the option -p, then mkdir will create parent directories as needed.
+
+
+rmdir
+you can use rmdir to remove the directory
+
+rmdir -p
+you can also use rmdir to recursively remove directories.
+
+
+----------------------------------
+Excersies working with directories
+----------------------------------
+Display your current directory.
+pwd
+
+Change to the /etc directory.
+cd /etc
+
+Now change to your home directory using only three key presses.
+cd (and the enter key)
+
+Change to the /boot/grub directory using only eleven key presses.
+cd /boot/grub (use the tab key)
+
+Go to the parent directory of the current directory.
+cd .. (with space between cd and ..)
+
+Go to the root directory.
+cd /
+
+List the contents of the root directory.
+ls
+
+List a long listing of the root directory.
+ls -l
+
+Stay where you are, and list the contents of /etc.
+ls /etc
+
+Stay where you are, and list the contents of /bin and /sbin.
+ls /bin /sbin
+
+Stay where you are, and list the contents of ~.
+ls ~
+
+List all the files (including hidden files) in your home directory.
+ls -al ~
+
+List the files in a human readable format.
+
+
+
+-----------------
+working with files
+------------------
+file
+file utility determines the file type. Linux does not use extensions to determine the file
+type. The command line does not care whether a file ends in .txt or .pdf
+
+touch
+One easy way to create an empty file is with touch
+
+
+rm
+When you use rm to remove a file, the file is gone. Therefore, be careful when removing files!
+
+
+rm -i
+To prevent yourself from accidentally removing a file, you can type rm -i
+
+
+rm -rf
+be very careful with rm -rf (the f means force and the r means recursive) You can literally erase your entire file system by accident. 
+
+
+cp
+To copy a file, use cp with a source and a target argument.
+sameFolder	cp file42 file42
+DifferentFolder	cp SinkoDeMayo FolderName
+multipFolder    cp file42 file42 FolfrtName	
+
+cp -r
+To copy complete directories, use cp -r (the -r option forces recursive copying of all files
+in all subdirectories).
+
+
+cp -i
+To prevent cp from overwriting existing files, use the -i (for interactive) option.
+
+
+mv
+Use mv to rename a file or to move the file to another directory.
+
+
+mv -i
+shows that mv -i will ask permission to overwrite an existing file
+
+
+----------------------------------
+Excersies working with files
+----------------------------------
+List the files in the / directory
+Create a directory name App
+Create the files today.txt and yesterday.txt
+Rename today.txt and yesterday.txt to Saturday.txt and Sunday.txt
+Create a directory called /backupApp and copy all files from App into it
+Remove the App directory and all its content
+
+
+
+
+-----------
+file links
+-----------
+creating hard links
+	When we create a hard link to a file with ln, an extra entry is added in the directory.
+	ln fileName whereToLink
+symbolic links
+	Symbolic links (sometimes called soft links) create a name to name mapping.	
+	ln -s whereToLink
+removing links rm linkName
+
+
+----------------------------------
+Excersies working with links
+----------------------------------
+Create two files named winter.txt and summer.txt
+Create a hard link to winter.txt named hlwinter.txt
+Create a symbolic link to summer.txt called slsummer.txt
+
+
+
+
+--------------------------
+working with file contents
+--------------------------
+
+head
+You can use head to display the first ten lines of a file.
+
+head -Number of line
+The head command can also display the first n lines of a file.
+
+
+tail
+the tail command will display the last ten lines of a file.
+
+tail -Number of line
+The tail command can also display the first n lines of a file.
+
+
+cat
+you can use cat to display a file on the screen
+
+cat
+You can use cat to add flat text files. cat > FileName
+
+
+more
+The more command is useful for displaying files that take up more than one screen
+
+
+----------------------------------
+Excersies working with files content
+----------------------------------
+
+Display the first 12 lines of /etc/group
+Display the last line of /etc/passwd
+
+
+
+--------------
+user & groups management 
+---------------
+
+Type of users in liunx 
+	root
+	admin users
+        normal users 
+        system users - user created when installing software for example Jenkins user
+        
+The local user database on Linux (and on most Unixes) is /etc/passwd.
+	useradd  You can add users with the useradd command
+	userdel You can delete the user yanina with userdel. The -r will also remove thehome directory.
+	usermod to add user to group usermod -a -G groupName userName
+	passwd Passwords of users can be set with the passwd command
+	su to swithc users
+	
+	groupadd Groups can be created with the groupadd command
+	groups list of group
+	groupmod You can change the group name with the groupmod command
+	groupdel You can permanently remove a group with the groupdel command.
+	
+
+Permission attributes:
+  Read    - r      = 4   grant read access for a user  
+  Write   - w      = 2   grant write/modify  access for a user
+  Execute - x      = 1   grant access to run the file as a command 
+  
+chmod : It will change the file or directory access permissions.
+       chmod +rwx test 
+       chmod 777 test 
+       
+chown : It will change the ownership of the file or dir.
+	sudo chown simon:simon test 
+	
+----------------------------------
+Excersies working with users
+----------------------------------
+Create a user account named serena
+Set the password for serena to hunter2
+Verify that user have correct entries in /etc/passwd, /etc/shadow and /etc/group
+change the password of serena to serena 
+Create the groups tennis, football and sports
+add serena to the tennis group
+create folder OnlineTennis and change the owner to serena
+change the permession of OnlineTennis to give wrx 
+
+
+
+
+--------------------
+filesystem hierarchy
+-------------------
+All Linux systems have a directory structure that starts at the root directory. The root
+directory is represented by a forward slash, like this: /. Everything that exists on your Linux system can be found below this root directory cd /
+
+
+Binaries are files that contain compiled source code (or machine code).
+	The /bin directory contains binaries for use by all users
+	The /sbin contains binaries to configure the operating system.
+
+configuration directories
+	The /boot directory contains all files needed to boot the computer
+	All of the machine-specific configuration files should be located in /etc
+		/etc/init.d/ directory that contains scripts to start and stop daemons.
+		/etc/sysconfig/ system configuration
+	
+
+data directories
+	The /home Users can store personal or project data under
+	The /srv for data that is served by your system
+	The /media The /media directory serves as a mount point for removable media devices such as CD, USB etc
+	The /mnt The /mnt directory should be empty and should only be used for temporary mount points
+	
+memory directories
+	The /dev directory is populated with files as the kernel is recognising hardware
+	The /proc It is actually a view of the kernel,
+	The /sys irectory contains kernel information about hardware
+		
+System Resources
+	The /usr hierarchy should contain shareable, read only data. Some people choose to mount/usr as read only.
+	The /var store Files that are unpredictable in size, such as log, cache and spool files exmaple /var/log /var/cache
+	
+
+----------------------
+Extra Command
+---------------------
+
+cal : disply the calender
+time : disply the time 
+date : disply the date	
+kill : Kill the process
+top : Display Linux tasks.
+ps : Display the current process running
+du : Estimate file space usage.
+df : Report file system disk space usage
+whatis: The whatis command displays a summary line
+ifconfig To find the IP address
+hostname : Show or set the system host name
+whoami : Display the current user info who gave this command
+users : Displays a compact list of the users currently logged
+who : Displays the current users working on the system.
+
+	
+Arguments
+Cat, grep, sort, uniq, wc
+
+find	
+find /etc	
+	Find files of type file find . -type f -name "*.conf"
+	Find files of type directory that end in .bak find /data -type d -name "*.bak"
+
+locate	
+locate filename
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
