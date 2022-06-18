@@ -90,6 +90,39 @@ There are 3 life cycles in maven.
   
 3,Site Lifecycle
   site generate the project's site documentation
+  
+  
+Standalone Applications – *.jar  Java Archieve
+=============================================
+ java code ONLY   
+    contains only java classes
+    jar = .classfiles
+    maven-stanalone-application.jar
+
+Web Applications  – .war  web Archieve
+======================================
+Java code + 
+web content (HTML, CSS, JS, images…,) 
+Backend code   - frontend code
+maven-web-application.war
+
+Enterprise applications – .ear –
+==================================
+ Enterprise Archieve
+    Multiple Modules
+      Java code + web content 
+    Ear =  war(s) + jar(s)
+    Banking applications
+    maven-web-application.war
+    maven-enterprise-application.ear
+
+===========================
+What are we building? we are building java codes:
+   src-- source code (raw code)
+   Unit-Test-Cases 
+      JAVA  --> JUnit test cases 
+   buildScripts:  pom.xml
+
 
 ```
 ## Maven -Configuration directory > conf/settings.xml
